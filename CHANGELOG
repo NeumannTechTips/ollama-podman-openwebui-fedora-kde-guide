@@ -1,0 +1,31 @@
+# Changelog
+
+All notable changes to this guide are documented here.
+
+The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+---
+
+## [1.0.0] - 2026-05-24
+
+### Added
+
+- Initial release of the complete installation guide
+- Step-by-step instructions for Fedora 44 KDE Plasma with NVIDIA RTX GPU
+- RPM Fusion driver installation via `akmod-nvidia` (595.xx branch)
+- NVIDIA Container Toolkit setup with CDI specification generation
+- SELinux configuration for GPU container passthrough
+- Validated `compose.yml` for Ollama and Open WebUI with Podman Compose
+- `docs/troubleshooting.md` covering driver, CDI, SELinux, container, and networking issues
+- `docs/advanced-gpu.md` covering layer offloading, VRAM planning, quantisation, and environment tuning
+- `CONTRIBUTING.md` with writing style guidelines and commit message format
+- GitHub issue templates for bug reports and documentation improvements
+- GitHub pull request template
+- MIT Licence
+
+### Notes
+
+- NVIDIA has not yet published an official `cuda-fedora44.repo` as of May 2026.
+  RPM Fusion is the validated and recommended driver installation method for Fedora 44.
+- Validated against Fedora 44 KDE Plasma (released 28 April 2026), Ollama v0.24.0,
+  and Podman 5.x.
