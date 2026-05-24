@@ -56,6 +56,14 @@ Fully tested and validated on RTX 3060 12 GB and higher GPUs.
 
 ---
 
+## Architecture Overview
+
+![Local LLM reference architecture on Fedora 44 KDE Plasma](docs/ollama_podman_openwebui_fedora44_reference_architecture_v0.1.png)
+
+The diagram above illustrates the complete reference architectures  stack: from the engineer's browser session at the top, through the Open WebUI and Ollama containers running inside Podman, down to the NVIDIA Container Toolkit, RPM Fusion drivers, Fedora 44 operating system, and finally the underlying RTX GPU hardware foundation.
+
+---
+
 ## System Requirements
 
 ### Minimum
