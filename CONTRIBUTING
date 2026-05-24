@@ -1,0 +1,133 @@
+# Contributing to ollama-podman-openwebui-fedora-kde-guide
+
+Thank you for taking the time to contribute. This guide exists to help engineers get a reliable, GPU-accelerated local LLM environment running on Fedora 44 KDE Plasma as quickly as possible. Every correction, clarification, and improvement makes that goal easier to achieve for the next person.
+
+---
+
+## Table of Contents
+
+- [Ways to Contribute](#ways-to-contribute)
+- [Before You Open an Issue](#before-you-open-an-issue)
+- [Reporting a Bug or Inaccuracy](#reporting-a-bug-or-inaccuracy)
+- [Suggesting an Improvement](#suggesting-an-improvement)
+- [Submitting a Pull Request](#submitting-a-pull-request)
+- [Writing Style Guidelines](#writing-style-guidelines)
+- [Commit Message Format](#commit-message-format)
+- [Code of Conduct](#code-of-conduct)
+
+---
+
+## Ways to Contribute
+
+There are several valuable ways to contribute to this repository, regardless of experience level:
+
+- **Correcting technical inaccuracies** in commands, version numbers, or expected outputs
+- **Reporting broken steps** caused by upstream package or driver changes
+- **Improving clarity** of existing instructions
+- **Adding troubleshooting entries** for issues you encountered and resolved
+- **Extending the docs** folder with validated advanced content (GPU tuning, model benchmarks, etc.)
+- **Updating version references** when Fedora, Ollama, Podman, or the NVIDIA toolkit releases a new version
+
+---
+
+## Before You Open an Issue
+
+Before submitting an issue, please take a moment to:
+
+1. Read through the [Troubleshooting](docs/troubleshooting.md) guide, as your problem may already be documented
+2. Search existing [open and closed issues](../../issues?q=is%3Aissue) to avoid duplicates
+3. Confirm that the issue is reproducible on a clean Fedora 44 KDE Plasma installation
+
+---
+
+## Reporting a Bug or Inaccuracy
+
+Use the **Bug Report** issue template when:
+
+- A command in the guide produces an error or unexpected output
+- A step fails due to a package version change or upstream update
+- An expected output no longer matches what Fedora 44 produces
+
+Please include as much detail as possible: your GPU model, driver version (`nvidia-smi`), Podman version (`podman --version`), and the exact error message. This information is essential for diagnosing and resolving the issue quickly.
+
+---
+
+## Suggesting an Improvement
+
+Use the **Documentation Improvement** issue template when:
+
+- A step could be explained more clearly
+- A useful command or validation step is missing
+- You have a tested configuration that would benefit other engineers
+
+---
+
+## Submitting a Pull Request
+
+To submit a pull request:
+
+1. Fork the repository
+2. Create a new branch with a descriptive name:
+   ```
+   git checkout -b fix/step-3-akmod-build-wait
+   git checkout -b docs/add-troubleshooting-selinux
+   ```
+3. Make your changes
+4. Verify that any commands you have added or modified have been tested on Fedora 44 KDE Plasma
+5. Commit your changes following the [commit message format](#commit-message-format) below
+6. Open a pull request against the `main` branch with a clear description of what was changed and why
+
+All pull requests are reviewed before merging. Please allow reasonable time for a response.
+
+---
+
+## Writing Style Guidelines
+
+To keep the guide consistent and professional:
+
+- Write in clear, direct British English
+- Use the active voice wherever possible
+- Every command block must include a **comment** explaining what it does and an **expected output** block where applicable
+- Do not introduce tools or methods that have not been validated on Fedora 44 KDE Plasma
+- Avoid referencing unofficial or third-party repositories unless they are the only validated option (as is currently the case with RPM Fusion for NVIDIA drivers)
+- Keep sentences concise; engineers reading this guide are looking for accuracy and speed, not prose
+
+---
+
+## Commit Message Format
+
+Use the following format for all commits:
+
+```
+<type>: <short description>
+
+<optional extended description explaining what changed and why>
+```
+
+Accepted types:
+
+| Type | Use for |
+|------|---------|
+| `fix` | Correcting a command, version number, or inaccurate instruction |
+| `docs` | Adding or improving documentation content |
+| `update` | Updating version references or expected outputs |
+| `structure` | Repository structure changes (new files, directories) |
+| `chore` | Housekeeping (formatting, typos, link fixes) |
+
+Example:
+
+```
+fix: correct CDI regeneration command after driver update
+
+The previous command did not specify the output path explicitly,
+which caused failures on systems where /etc/cdi did not yet exist.
+Added mkdir -p guard and updated expected output.
+```
+
+---
+
+## Code of Conduct
+
+This project follows a simple standard: treat every contributor with respect. Feedback on technical content is welcome and encouraged. Personal criticism is not.
+
+Issues or pull requests that are disrespectful, off-topic, or submitted in bad faith will be closed without further engagement.
