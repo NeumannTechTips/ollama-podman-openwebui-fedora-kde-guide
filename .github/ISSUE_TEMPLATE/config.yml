@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: General Discussion
+    url: https://github.com/NeumannTechTips/ollama-podman-openwebui-fedora-kde-guide/discussions
+    about: Ask questions or discuss the guide with the community.
+  - name: Fedora Discussion Forum
+    url: https://discussion.fedoraproject.org
+    about: General Fedora Linux support from the wider Fedora community.
+  - name: Ollama GitHub Repository
+    url: https://github.com/ollama/ollama
+    about: Issues specific to Ollama itself (not this guide) should be reported upstream.
+  - name: Open WebUI GitHub Repository
+    url: https://github.com/open-webui/open-webui
+    about: Issues specific to Open WebUI itself (not this guide) should be reported upstream.
