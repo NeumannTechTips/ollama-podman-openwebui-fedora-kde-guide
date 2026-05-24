@@ -1,0 +1,79 @@
+name: Documentation Improvement
+description: Suggest a clarification, correction, or addition to the guide content.
+title: "[DOCS]: "
+labels: ["documentation", "enhancement"]
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to suggest improvements to the guide's clarity, accuracy,
+        or completeness. Technical corrections and additions are equally welcome.
+
+  - type: dropdown
+    id: improvement-type
+    attributes:
+      label: Type of Improvement
+      options:
+        - "Clarification: An existing step is unclear or ambiguous"
+        - "Correction: An instruction, command, or expected output is wrong"
+        - "Addition: A useful command, step, or note is missing"
+        - "Version update: A version number or package name is out of date"
+        - "New content: A new section or document would be valuable"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-file
+    attributes:
+      label: Affected File or Section
+      options:
+        - "README.md"
+        - "docs/troubleshooting.md"
+        - "docs/advanced-gpu.md"
+        - "CONTRIBUTING.md"
+        - "Multiple files"
+        - "New file (does not yet exist)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-content
+    attributes:
+      label: Current Content
+      description: |
+        Paste the existing text, command, or section heading that needs to be changed.
+        Leave blank if this is a suggestion for entirely new content.
+      render: markdown
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggested-change
+    attributes:
+      label: Suggested Change or Addition
+      description: Describe what you would like to see added or changed, and why.
+      placeholder: |
+        Example: Step 3 should include a note that users upgrading from Fedora 43 should
+        remove the existing akmod-nvidia package before proceeding, to avoid version conflicts.
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation
+      description: |
+        Have you tested this suggestion on Fedora 44 KDE Plasma?
+        If so, please confirm your GPU model and driver version.
+      placeholder: "Tested on RTX 3060 12 GB, driver 595.xx.xx, Fedora 44."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-Submission Checklist
+      options:
+        - label: I have searched existing open and closed issues and this has not been suggested before
+          required: true
