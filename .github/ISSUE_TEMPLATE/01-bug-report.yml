@@ -1,0 +1,121 @@
+name: Bug Report
+description: Report a broken step, incorrect command, or inaccurate expected output in the guide.
+title: "[BUG]: "
+labels: ["bug", "needs-triage"]
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report this. Please complete all required fields.
+        The more detail you provide, the faster the issue can be diagnosed and resolved.
+
+  - type: dropdown
+    id: guide-section
+    attributes:
+      label: Affected Section
+      description: Which step or section of the guide does this affect?
+      options:
+        - "Step 1: Update Fedora and Install Core Tools"
+        - "Step 2: Enable RPM Fusion Repositories"
+        - "Step 3: Install NVIDIA Drivers via RPM Fusion"
+        - "Step 4: Configure SELinux"
+        - "Step 5: Install NVIDIA Container Toolkit"
+        - "Step 6: Generate CDI Specification"
+        - "Step 7: Verify GPU Passthrough"
+        - "Step 8: Create Project Directory"
+        - "Step 9: Create compose.yml"
+        - "Step 10: Start the Services"
+        - "Step 11: Access Open WebUI"
+        - "Step 12: Pull First Model"
+        - "docs/troubleshooting.md"
+        - "docs/advanced-gpu.md"
+        - "Other / Multiple sections"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the problem clearly. What did you expect to happen, and what happened instead?
+      placeholder: |
+        Example: Step 3 fails with "Error: Unable to find a match: akmod-nvidia" after enabling RPM Fusion.
+    validations:
+      required: true
+
+  - type: textarea
+    id: command-run
+    attributes:
+      label: Command Executed
+      description: Paste the exact command you ran.
+      render: bash
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-output
+    attributes:
+      label: Error Output
+      description: Paste the complete error message or unexpected output.
+      render: text
+    validations:
+      required: true
+
+  - type: input
+    id: fedora-version
+    attributes:
+      label: Fedora Version
+      description: Output of `cat /etc/fedora-release`
+      placeholder: "Fedora release 44 (Forty Four)"
+    validations:
+      required: true
+
+  - type: input
+    id: gpu-model
+    attributes:
+      label: GPU Model and VRAM
+      description: Output of `nvidia-smi --query-gpu=name,memory.total --format=csv,noheader` (if available)
+      placeholder: "NVIDIA GeForce RTX 3060, 12288 MiB"
+    validations:
+      required: true
+
+  - type: input
+    id: driver-version
+    attributes:
+      label: NVIDIA Driver Version
+      description: Output of `modinfo -F version nvidia` (if available)
+      placeholder: "595.xx.xx"
+    validations:
+      required: false
+
+  - type: input
+    id: podman-version
+    attributes:
+      label: Podman Version
+      description: Output of `podman --version`
+      placeholder: "podman version 5.x.x"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Any other relevant information. For example: Secure Boot status, whether this is a fresh
+        installation or an upgrade from Fedora 43, or any custom system configuration.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-Submission Checklist
+      options:
+        - label: I have searched existing open and closed issues and this has not been reported before
+          required: true
+        - label: I have read the Troubleshooting Guide (docs/troubleshooting.md)
+          required: true
+        - label: I can reproduce this issue on Fedora 44 KDE Plasma
+          required: true
