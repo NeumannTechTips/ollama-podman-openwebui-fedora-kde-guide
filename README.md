@@ -127,15 +127,15 @@ Complete!
 Verify the installed versions:
 
 ## bash
-podman --version
+### podman --version
 podman-compose --version
 
 
 **Expected output (versions may be higher):**
 
 
-podman version 5.x.x
 podman-compose version 1.x.x
+podman version 5.x.x
 
 
 > If a kernel update was installed, **reboot now** before continuing:
