@@ -115,7 +115,8 @@ sudo dnf update -y
 
 ## install podman
 
-sudo dnf install -y podman podman-compose curl
+sudo dnf install -y podman 
+podman-compose curl
 
 
 **Expected output:**
@@ -134,7 +135,8 @@ podman-compose --version
 **Expected output (versions may be higher):**
 
 
-podman-compose version 1.x.x
+podman-compose version 1.x.x 
+
 podman version 5.x.x
 
 
