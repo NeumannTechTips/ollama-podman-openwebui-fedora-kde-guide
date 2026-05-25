@@ -112,6 +112,9 @@ Begin with a full system update to ensure all packages are at their latest versi
 
 ## bash
 sudo dnf update -y
+
+## install podman
+
 sudo dnf install -y podman podman-compose curl
 
 
