@@ -349,11 +349,7 @@ nvidia.com/gpu=all
 Before deploying the full stack, confirm that Podman can successfully pass the GPU through to a container. This is the most important validation step.
 
 ## bash
-podman run --rm \
-  --device nvidia.com/gpu=all \
-  --security-opt label=type:nvidia_container_t \
-  docker.io/nvidia/cuda:12.3.0-base-ubuntu22.04 \
-  nvidia-smi
+podman run --rm --device nvidia.com/gpu=all --security-opt label=type:nvidia_container_t docker.io/nvidia/cuda:12.3.0-base-ubuntu22.04 nvidia-smi
 
 
 **Expected output:**
