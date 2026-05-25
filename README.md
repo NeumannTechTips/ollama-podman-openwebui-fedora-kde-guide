@@ -18,6 +18,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Architecture Overview](#architecture-overview)
 - [System Requirements](#system-requirements)
 - [Pre-Installation Checklist](#pre-installation-checklist)
 - [Step-by-Step Installation](#step-by-step-installation)
@@ -54,6 +55,14 @@ GPU passthrough into Podman containers is handled using the **Container Device I
 > **Important note regarding NVIDIA CUDA repositories:** As of May 2026, NVIDIA has not yet published an official `cuda-fedora44.repo` for Fedora 44. NVIDIA typically lags several months behind new Fedora releases. The **RPM Fusion** repository is therefore the validated and recommended driver installation method for Fedora 44. It provides automatic kernel module rebuilds via `akmods`, Secure Boot compatibility, and timely updates through DNF.
 
 Fully tested and validated on RTX 3060 12 GB and higher GPUs.
+
+---
+
+## Architecture Overview
+
+![Local LLM logical reference architecture on Fedora 44 KDE Plasma](docs/ollama_podman_openwebui_fedora44_reference_architecture_v0.1.png)
+
+The diagram above illustrates the complete logical stack: from the engineer's browser session at the top, through the Open WebUI and Ollama containers running inside Podman, down to the NVIDIA Container Toolkit, RPM Fusion drivers, Fedora 44 operating system, and finally the underlying RTX GPU hardware foundation.
 
 ---
 
