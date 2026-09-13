@@ -744,3 +744,22 @@ If this guide has been helpful, consider leaving a star on the repository.
 ---
 
 *Maintained by the community. Not affiliated with Fedora Project, NVIDIA, Ollama, or Open WebUI.*
+
+---
+
+## Disclaimer
+
+General information only, offered as a community contribution rather than as professional advice. The views here are the author's own and are not those of any employer or client.
+
+This guide asks you to run commands with elevated privileges, replace graphics drivers, rebuild kernel modules, change SELinux policy and install packages from third-party repositories. Any one of those can leave a machine unable to boot to a desktop. Read every command before you run it, understand what it does on your system, and do not run it first on a machine you cannot afford to rebuild.
+
+No warranty is given, and no responsibility is accepted for any outcome. Full version: [DISCLAIMER.md](https://github.com/NeumannTechTips/neumanntechtips-resources/blob/main/DISCLAIMER.md)
+
+---
+
+## More from NeumannTechTips
+
+This guide comes out of the work behind **[NeumannTechTips](https://www.youtube.com/@NeumannTechTips)**, a channel on practical AI for people who have to make it work inside a real organisation.
+
+- 📺 **[youtube.com/@NeumannTechTips](https://www.youtube.com/@NeumannTechTips)** · a new video every other Thursday
+- 📚 **[neumanntechtips-resources](https://github.com/NeumannTechTips/neumanntechtips-resources)** · free prompt packs and checklists, licensed CC BY 4.0, no sign up
